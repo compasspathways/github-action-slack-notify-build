@@ -23,7 +23,7 @@ describe('Utils', () => {
     it('shows status', () => {
       const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PUSH_EVENT });
 
-      expect(attachments[0].fields.find(a => a.title === 'Status')).toEqual({
+      expect(attachments[0].fields.find((a) => a.title === 'Status')).toEqual({
         title: 'Status',
         value: 'STARTED',
         short: true,
@@ -34,7 +34,7 @@ describe('Utils', () => {
       it('links to the action workflow', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PUSH_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Workflow')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Workflow')).toEqual({
           title: 'Workflow',
           value: `<https://github.com/compasspathways/github-action-slack-notify-build/actions/runs/${runId} | CI>`,
           short: true,
@@ -44,7 +44,7 @@ describe('Utils', () => {
       it('links to the action repo', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PUSH_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Repo')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Repo')).toEqual({
           title: 'Repo',
           value: `<https://github.com/compasspathways/github-action-slack-notify-build | compasspathways/github-action-slack-notify-build>`,
           short: true,
@@ -54,7 +54,7 @@ describe('Utils', () => {
       it('shows the event name', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PUSH_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Event')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Event')).toEqual({
           title: 'Event',
           value: 'push',
           short: true,
@@ -64,7 +64,7 @@ describe('Utils', () => {
       it('links to the branch', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PUSH_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Branch')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Branch')).toEqual({
           title: 'Branch',
           value: `<https://github.com/compasspathways/github-action-slack-notify-build/commit/abc123 | my-branch>`,
           short: true,
@@ -76,7 +76,7 @@ describe('Utils', () => {
       it('links to the action workflow', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PR_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Workflow')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Workflow')).toEqual({
           title: 'Workflow',
           value: `<https://github.com/compasspathways/github-action-slack-notify-build/actions/runs/${runId} | CI>`,
           short: true,
@@ -86,7 +86,7 @@ describe('Utils', () => {
       it('shows the event name', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PR_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Event')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Event')).toEqual({
           title: 'Event',
           value: 'pull_request',
           short: true,
@@ -96,7 +96,7 @@ describe('Utils', () => {
       it('links to the PR', () => {
         const attachments = buildSlackAttachments({ status: 'STARTED', color: 'good', github: GITHUB_PR_EVENT });
 
-        expect(attachments[0].fields.find(a => a.title === 'Pull Request')).toEqual({
+        expect(attachments[0].fields.find((a) => a.title === 'Pull Request')).toEqual({
           title: 'Pull Request',
           value: `<https://github.com/compasspathways/github-action-slack-notify-build/pulls/1 | This is a PR>`,
           short: true,
